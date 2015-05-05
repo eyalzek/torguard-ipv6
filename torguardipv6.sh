@@ -1,7 +1,7 @@
 #!/bin/bash
 function start {
     sysctl -w net.ipv6.conf.wlan0.disable_ipv6=1
-    openvpn "/etc/openvpn/TorGuard.$1.conf"
+    openvpn "/etc/openvpn/TorGuard.$1.conf" &
 }
 
 function stop {
