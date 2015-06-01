@@ -2,6 +2,9 @@
 function start {
     sysctl -w net.ipv6.conf.wlan0.disable_ipv6=1
     openvpn "/etc/openvpn/TorGuard.$1.conf" &
+    sleep 10
+    echo "External IP is:"
+    curl http://icanhazip.com/
 }
 
 function stop {
